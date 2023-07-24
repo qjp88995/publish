@@ -1,4 +1,4 @@
-FROM node:10-slim
+FROM node:16-slim
 
 LABEL com.github.actions.name="Primer publish"
 LABEL com.github.actions.icon="package"
