@@ -24,7 +24,7 @@ module.exports = function publish(options = {dir: '.'}, npmArgs = []) {
         if (isLatest) {
           console.warn(`[publish] skipping "npm version" because "${version}" matches package.json`)
           // this is a fairly reliable way to determine whether the package@version is published
-          return run('npm', ['view', `${name}@${version}`, 'version'], {stderr: 'inherit'})
+          return run('npm', ['view', name, 'version'], {stderr: 'inherit'})
             .then(({stdout}) => stdout === version)
             .then(published => {
               if (published) {
